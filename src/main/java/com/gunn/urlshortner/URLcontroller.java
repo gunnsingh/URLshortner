@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.*;
 public class URLcontroller {
     public final Repo repo;
 
-    public URLcontroller(Repo repo) {
-        this.repo = repo;
+    public URLcontroller(Repo _repo) {
+        this.repo = _repo;
     }
-
+    @GetMapping
+    public String index() {
+        return "home";
+    }
     @GetMapping("/home")
     public String home() {
         return "home";
